@@ -4,24 +4,24 @@ library(readxl)
 library(writexl)
 
 # Import files ------------------------------------------------------------
-stub <- read_csv("/Volumes/fsmresfiles/CNADC/Imaging_Core/imaging_core_docs/Recruitment/IC Goals/Y4/AlzheimersDiseaseRes-StubDetails_DATA_2024-06-28_1029.csv")
+stub <- read_csv("AlzheimersDiseaseRes-StubDetails_DATA_2024-06-28_1029.csv")
 
-ppt_status <- read_csv("/Volumes/fsmresfiles/CNADC/Imaging_Core/imaging_core_docs/Recruitment/IC Goals/Y4/2024-06-28T15_28_21.921Z_clinical_core_export.csv")
+ppt_status <- read_csv("2024-06-28T15_28_21.921Z_clinical_core_export.csv")
 
 ## Change column names
 colnames(ppt_status)[which(names(ppt_status) == "globalId")] <- "Ripple Global ID"
 colnames(ppt_status)[which(names(ppt_status) == "cv.core_participant_status")] <- "participant_status"
 colnames(stub)[which(names(stub) == "global_id")] <- "Ripple Global ID"
 
-mri_elig <- read_csv("/Volumes/fsmresfiles/CNADC/Imaging_Core/imaging_core_docs/Recruitment/IC Goals/Y4/AlzheimersDiseaseRes-MRIElig_DATA_LABELS_2024-06-28_1038.csv")
+mri_elig <- read_csv("AlzheimersDiseaseRes-MRIElig_DATA_LABELS_2024-06-28_1038.csv")
 
-pet_elig <- read_csv("/Volumes/fsmresfiles/CNADC/Imaging_Core/imaging_core_docs/Recruitment/IC Goals/Y4/AlzheimersDiseaseRes-PETElig_DATA_LABELS_2024-06-28_1027.csv")
+pet_elig <- read_csv("AlzheimersDiseaseRes-PETElig_DATA_LABELS_2024-06-28_1027.csv")
 
-mri_all_scans <- read_csv("/Volumes/fsmresfiles/CNADC/Imaging_Core/imaging_core_docs/Recruitment/IC Goals/Y4/AlzheimersDiseaseRes-AllCoreImagingScansM_DATA_LABELS_2024-06-28_1034.csv")
+mri_all_scans <- read_csv("AlzheimersDiseaseRes-AllCoreImagingScansM_DATA_LABELS_2024-06-28_1034.csv")
 
-amyloid_pet_all_scans <- read_csv("/Volumes/fsmresfiles/CNADC/Imaging_Core/imaging_core_docs/Recruitment/IC Goals/Y4/AlzheimersDiseaseRes-AllCoreImagingScansA_DATA_LABELS_2024-06-28_1038.csv")
+amyloid_pet_all_scans <- read_csv("AlzheimersDiseaseRes-AllCoreImagingScansA_DATA_LABELS_2024-06-28_1038.csv")
 
-tau_pet_all_scans <- read_csv("/Volumes/fsmresfiles/CNADC/Imaging_Core/imaging_core_docs/Recruitment/IC Goals/Y4/AlzheimersDiseaseRes-AllCoreImagingScansT_DATA_LABELS_2024-06-28_1038.csv")
+tau_pet_all_scans <- read_csv("AlzheimersDiseaseRes-AllCoreImagingScansT_DATA_LABELS_2024-06-28_1038.csv")
 
 # Merging databases ----------------------------------------------------------
 ## Merging MR eligibility with all Core MR scans
